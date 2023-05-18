@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Chemistry Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background-color: #2C2C2C;
+        color: #EFEFEF;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+      }
+      h1, h2, h3 {
+        font-family: 'Merriweather', serif;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      h1 {
+        font-size: 48px;
+      }
+      h2 {
+        font-size: 36px;
+      }
+      h3 {
+        font-size: 24px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+      }
+      h3:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        bottom: -10px;
+        left: 0;
+        background-color: #9CAF88;
+      }
+      a {
+        color: #5A86AD;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #F67280;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+      .directory {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+      }
+      .directory li {
+        margin-right: 20px;
+        list-style-type: none;
+      }
+      .directory li:last-child {
+        margin-right: 0;
+      }
+      .directory a {
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .directory a:hover {
+        background-color: #B48E92;
+        color: #2C2C2C;
+      }
+      .project {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+      .project-image {
+        flex: 1;
+        margin-right: 50px;
+      }
+      .project-image img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .project-title {
+        flex: 2;
+        font-size: 24px;
+      }
+      .project-description {
+        flex: 3;
+        font-size: 18px;
+        font-weight: lighter;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #5A86AD;
+        color: #2C2C2C;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .button:hover {
+        background-color: #F67280;
+      }
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 14px;
+      }
+      footer p {
+        margin: 0;
+      }
+      .publication {
+        margin-bottom: 50px;
+      }
+      .publication h3 {
+        text-align: center;
+        position: relative;
+       
+        display: inline-block;
+        text-align: center;
+      }
+      .publication h3:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        bottom: -10px;
+        left: 0;
+        background-color: #9CAF88;
+      }
+      .publication p {
+        text-align: justify;
+      }
+      .button:hover {
+        background-color: #B48E92;
+      }
+	header {
+    position: relative;
+    padding: 50px;
+    text-align: center;
+  }
+
+  header::before {
+    content: "";
+    background-image: url('20220909_173317.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; /* Adjust the opacity value as needed */
+    z-index: -1;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Chemistry Page</h1>
+        <nav>
+          <ul class="directory">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Publications</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h2>About Me</h2>
+        <p style="text-align: justify;">I am a doctoral candidate in Chemistry with a focus on organic synthesis. My research interests include the development of new synthetic methodologies and their application to the total synthesis of natural products.</p>
+        <h2>Projects</h2>
+        <div class="project">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/400x250.png?text=Project+Image" alt="Project Image">
+          </div>
+          <div class="project-title">
+            <h3>Project 1</h3>
+            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis eleifend arcu, ac congue felis varius a. Vestibulum maximus ligula nec commodo consectetur. Fusce venenatis mi eu nunc congue, sed suscipit arcu pellentesque.</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/400x250.png?text=Project+Image" alt="Project Image">
+          </div>
+          <div class="project-title">
+            <h3>Project 2</h3>
+            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis eleifend arcu, ac congue felis varius a. Vestibulum maximus ligula nec commodo consectetur. Fusce venenatis mi eu nunc congue, sed suscipit arcu pellentesque.</p>
+            <a class="button" href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/400x250.png?text=Project+Image" alt="Project Image">
+          </div>
+          <div class="project-title">
+            <h3>Project 3</h3>
+            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis eleifend arcu, ac congue felis varius a. Vestibulum maximus ligula nec commodo consectetur. Fusce venenatis mi eu nunc congue, sed suscipit arcu pellentesque.</p>
+            <a class="button" href="#">Learn More</a>
+</div>
+</div>
+<h2>Publications</h2>
+<div class="publication">
+<h3>Publication 1</h3>
+<p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis eleifend arcu, ac congue felis varius a. Vestibulum maximus ligula nec commodo consectetur. Fusce venenatis mi eu nunc congue, sed suscipit arcu pellentesque.</p>
+</div>
+    <div class="publication">
+      <h3>Publication 2</h3>
+      <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis eleifend arcu, ac congue felis varius a. Vestibulum maximus ligula nec commodo consectetur. Fusce venenatis mi eu nunc congue, sed suscipit arcu pellentesque.</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Chemistry Page. All rights reserved.</p>
+    <div class="contact-icons">
+      <a href="#"><img src="email-icon.png" alt="Email"></a>
+      <a href="#"><img src="phone-icon.png" alt="Phone"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
