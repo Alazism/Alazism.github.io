@@ -68,78 +68,92 @@
     nav ul li {
       margin-right: 20px;
     }
-    .widget-container {
-      display: flex;
-      justify-content: center;
-      margin: auto;
-      max-width: 900px;
-	align-items: flex-start;
+ .widget-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 900px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
 
-    }
-    .widget {
-      background-color: #424242;
-      color: #EFEFEF;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      border: 2px solid #5A86AD;
-      box-shadow: 0 0 10px rgba(90, 134, 173, 0.5);
-      flex: 1;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      z-index: 2;
-    }
-    .widget:hover {
-      transform: scale(1.15);
-    }
-    .widget-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-    }
-    .widget-content h3 {
-      margin-bottom: 20px;
-    }
-    .widget-content form {
-      width: 300px;
-      height: 500px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .widget-content input[type="text"],
-    .widget-content input[type="email"],
-    .widget-content textarea {
-      width: 90%;
-      padding: 10px;
-      margin-bottom: 20px;
-      margin-left: 5px;
-      border: none;
-      border-radius: 5px;
-    }
-    .widget-content button {
-      padding: 10px 20px;
-      background-color: #9CAF88;
-      color: #2C2C2C;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-    .widget-content button:hover {
-      background-color: #b48e92;
-    }
-    .twitter-feed,
-    .youtube-feed,
-    .contact-widget {
-      width: 400px;
-      height: 500px;
-    }
+.widget {
+  background-color: #424242;
+  color: #EFEFEF;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #5A86AD;
+  box-shadow: 0 0 10px rgba(90, 134, 173, 0.5);
+  flex: 1;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.widget:hover {
+  transform: scale(1.15);
+  z-index: 3;
+}
+
+.widget-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.widget-content h3 {
+  margin-bottom: 20px;
+}
+
+.widget-content form {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widget-content input[type="text"],
+.widget-content input[type="email"],
+.widget-content textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.widget-content button {
+  padding: 10px 20px;
+  background-color: #9CAF88;
+  color: #2C2C2C;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.widget-content button:hover {
+  background-color: #b48e92;
+}
+
+.twitter-feed,
+.youtube-feed,
+.contact-widget {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  z-index: 2;
+}
+    
     footer {
       background-color: #2C2C2C;
       padding: 20px;
