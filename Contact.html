@@ -68,9 +68,13 @@
     nav ul li {
       margin-right: 20px;
     }
-    .widget {
+    .widget-container {
+      display: flex;
+      justify-content: space-between;
       margin: 50px auto;
-      width: 400px;
+      max-width: 900px;
+    }
+    .widget {
       background-color: #424242;
       color: #EFEFEF;
       padding: 20px;
@@ -78,10 +82,32 @@
       text-align: center;
       border: 2px solid #5A86AD;
       box-shadow: 0 0 10px rgba(90, 134, 173, 0.5);
+      flex: 1;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .widget input[type="text"],
-    .widget input[type="email"],
-    .widget textarea {
+    .widget:hover {
+      transform: scale(1.15);
+    }
+    .widget-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+    .widget-content h3 {
+      margin-bottom: 20px;
+    }
+    .widget-content form {
+      width: 300px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .widget-content input[type="text"],
+    .widget-content input[type="email"],
+    .widget-content textarea {
       width: 90%;
       padding: 10px;
       margin-bottom: 20px;
@@ -89,47 +115,83 @@
       border: none;
       border-radius: 5px;
     }
-    .widget button {
+    .widget-content button {
       padding: 10px 20px;
       background-color: #9CAF88;
-      color: #fff;
+      color: #2C2C2C;
       border: none;
       border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
       transition: background-color 0.3s ease;
+      cursor: pointer;
     }
-    .widget button:hover {
-      background-color: #B48E92;
+    .widget-content button:hover {
+      background-color: #b48e92;
+    }
+    .twitter-feed,
+    .youtube-feed,
+    .contact-widget {
+      width: 400px;
+      height: 500px;
     }
     footer {
       background-color: #2C2C2C;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      bottom: 0;
+      margin-top: 50px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
       color: #EFEFEF;
     }
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-	        <li><a href="PRoject.html">Projects</a></li>
-	        <li><a href="Publication.html">Publications</a></li>
-          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <div class="widget">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" placeholder="Your Message" required></textarea><br>
-        <button type="submit">Submit</button>
-      </form>
+    <div class="widget-container">
+      <div class="widget twitter-feed">
+        <div class="widget-content">
+          <h3>Twitter Feed</h3>
+          <!-- Add your Twitter feed code here -->
+          <!-- Example: -->
+          <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/OpenAI?ref_src=twsrc%5Etfw">Tweets by OpenAI</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+      <div class="widget contact-widget">
+        <div class="widget-content">
+          <h3>Contact</h3>
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="widget youtube-feed">
+        <div class="widget-content">
+          <h3>YouTube Feed</h3>
+          <!-- Add your YouTube feed code here -->
+          <!-- Example: -->
+          <iframe width="300" height="400" src="https://www.youtube.com/embed/?listType=user_uploads&list=OpenAI" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
 
     <footer>
