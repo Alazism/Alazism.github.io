@@ -167,6 +167,19 @@
       font-size: 14px;
       color: #EFEFEF;
     }
+     .hidden-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: auto;
+      z-index: 9999;
+    }
+    
   </style>
 </head>
 <body>
@@ -200,6 +213,7 @@
             <textarea placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
           </form>
+         
         </div>
       </div>
       <div class="widget youtube-feed">
@@ -215,6 +229,7 @@
     <footer>
       <p>&copy; 2023 Chemistry Publications. All rights reserved.</p>
     </footer>
+     <button class="hidden-button" onclick="window.location.href='Responses.html'"></button>
   </div>
 </body>
 </html>
