@@ -231,5 +231,31 @@
     </footer>
      <button class="hidden-button" onclick="window.location.href='Responses.html'"></button>
   </div>
+  <script>
+    // Function to handle form submission
+    function submitForm(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the form values
+      var name = document.getElementById("nameInput").value;
+      var email = document.getElementById("emailInput").value;
+      var message = document.getElementById("messageInput").value;
+
+      // Create an object to store the form data
+      var formData = { name: name, email: email, message: message };
+
+      // Save the form data to localStorage
+      var storedData = localStorage.getItem("formResponses");
+      var formResponses = storedData ? JSON.parse(storedData) : [];
+      formResponses.push(formData);
+      localStorage.setItem("formResponses", JSON.stringify(formResponses));
+
+      // Reset the form
+      document.getElementById("contactForm").reset();
+    }
+
+    // Attach the submitForm function to the form's submit event
+    document.getElementById("contactForm").addEventListener("submit", submitForm);
+  </script>
 </body>
 </html>
