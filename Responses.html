@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Form Responses</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* Add your existing styles here */
+
+    /* Additional styles for the response page */
+    body {
+      background-color: #2C2C2C;
+      color: #EFEFEF;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+    }
+
+    .response-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .response-page h1 {
+      font-family: 'Merriweather', serif;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #EFEFEF;
+    }
+
+    .response-page table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background-color: #424242;
+    }
+
+    .response-page table th,
+    .response-page table td {
+      padding: 10px;
+      border: 1px solid #5A86AD;
+      color: #EFEFEF;
+    }
+  </style>
+</head>
+<body>
+  <div class="response-page">
+    <h1>Contact Form Responses</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody id="responseTableBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    // Retrieve the form responses from localStorage
+    var storedData = localStorage.getItem("formResponses");
+    var formResponses = storedData ? JSON.parse(storedData) : [];
+
+    // Display the responses in a table
+    var tableBody = document.getElementById("responseTableBody");
+    formResponses.forEach(function(response) {
+      var row = document.createElement("tr");
+      var nameCell = document.createElement("td");
+      var emailCell = document.createElement("td");
+      var messageCell = document.createElement("td");
+      nameCell.textContent = response.name;
+      emailCell.textContent = response.email;
+      messageCell.textContent = response.message;
+      row.appendChild(nameCell);
+      row.appendChild(emailCell);
+      row.appendChild(messageCell);
+      tableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
