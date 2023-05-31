@@ -8,6 +8,8 @@
     /* Add your existing styles here */
 
     /* Additional styles for the response page */
+ body {
+      background-color: #2C2C2C;
     .response-page {
       max-width: 900px;
       margin: 0 auto;
@@ -49,7 +51,26 @@
       var storedData = localStorage.getItem("formResponses");
       var formResponses = storedData ? JSON.parse(storedData) : [];
 
-      // Display the responses in a table
+      // Create a container div for the response page content
+      var responsePage = document.createElement("div");
+      responsePage.classList.add("response-page");
+
+      // Create a table element
+      var table = document.createElement("table");
+
+      // Create table header row
+      var tableHeader = document.createElement("thead");
+      var headerRow = document.createElement("tr");
+      var headerNames = ["Name", "Email", "Message"];
+      headerNames.forEach(function(name) {
+        var headerCell = document.createElement("th");
+        headerCell.textContent = name;
+        headerRow.appendChild(headerCell);
+      });
+      tableHeader.appendChild(headerRow);
+      table.appendChild(tableHeader);
+
+      // Create table body for form responses
       var tableBody = document.createElement("tbody");
       formResponses.forEach(function(response) {
         var row = document.createElement("tr");
@@ -64,14 +85,9 @@
         row.appendChild(messageCell);
         tableBody.appendChild(row);
       });
-
-      // Append the table body to the table element
-      var table = document.createElement("table");
       table.appendChild(tableBody);
 
-      // Create a container div for the response page content
-      var responsePage = document.createElement("div");
-      responsePage.classList.add("response-page");
+      // Append the table to the response page
       responsePage.appendChild(document.createElement("h1")).textContent = "Contact Form Responses";
       responsePage.appendChild(table);
 
