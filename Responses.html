@@ -8,8 +8,10 @@
     /* Add your existing styles here */
 
     /* Additional styles for the response page */
- body {
+    body {
       background-color: #2C2C2C;
+    }
+
     .response-page {
       max-width: 900px;
       margin: 0 auto;
@@ -37,6 +39,24 @@
     .response-page table td {
       padding: 10px;
       border: 1px solid #5A86AD;
+    }
+
+    .clear-button {
+      padding: 10px 20px;
+      background-color: #9CAF88;
+      color: #2C2C2C;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .clear-button:hover {
+      background-color: #b48e92;
     }
   </style>
 </head>
@@ -91,12 +111,29 @@
       responsePage.appendChild(document.createElement("h1")).textContent = "Contact Form Responses";
       responsePage.appendChild(table);
 
+      // Create the "Clear Responses" button
+      var clearButton = document.createElement("button");
+      clearButton.textContent = "Clear Responses";
+      clearButton.classList.add("clear-button");
+      clearButton.onclick = clearFormResponses;
+
+      // Append the button to the response page
+      responsePage.appendChild(clearButton);
+
       // Append the response page content to the document body
       document.body.appendChild(responsePage);
     } else {
       // Password is incorrect, block the content
       document.body.innerHTML = "<h1>Access Denied</h1>";
       document.body.style.textAlign = "center";
+    }
+
+    function clearFormResponses() {
+      // Remove the formResponses item from localStorage
+      localStorage.removeItem("formResponses");
+
+      // Reload the page to reflect the changes
+      location.reload();
     }
   </script>
 </body>
