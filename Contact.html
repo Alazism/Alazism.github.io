@@ -153,109 +153,137 @@
   position: relative;
   z-index: 2;
 }
-    
-    footer {
-      background-color: #2C2C2C;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      bottom: 0;
-      margin-top: 50px;
-    }
-    footer p {
-      margin: 0;
-      font-size: 14px;
-      color: #EFEFEF;
-    }
-     .hidden-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: auto;
-      z-index: 9999;
-    }
-    
-  </style>
+
+.success-message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #9CAF88;
+  text-align: center;
+  text-shadow: 1px 1px 1px #5A86AD;
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 1px 1px 1px #5A86AD, 1px 1px 3px #5A86AD, 1px 1px 5px #5A86AD;
+  }
+  to {
+    text-shadow: 1px 1px 5px #5A86AD, 1px 1px 3px #5A86AD, 1px 1px 1px #5A86AD;
+  }
+}
+
+footer {
+  background-color: #2C2C2C;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #EFEFEF;
+}
+
+.hidden-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: auto;
+  z-index: 9999;
+}
+
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="PRoject.html">Projects</a></li>
-          <li><a href="Publication.html">Publications</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<div class="container">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="PRoject.html">Projects</a></li>
+        <li><a href="Publication.html">Publications</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="widget-container">
-      <div class="widget twitter-feed">
-        <div class="widget-content">
-          <h3>Twitter Feed</h3>
-          <!-- Add your Twitter feed code here -->
-          <!-- Example: -->
-          <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/OpenAI?ref_src=twsrc%5Etfw">Tweets by OpenAI</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      </div>
-      <div class="widget contact-widget" style="margin: 0 10px;">
-        <div class="widget-content">
-          <h3>Contact</h3>
-          <form id="contactForm">
-            <input type="text" id="nameInput" placeholder="Your Name" required>
-            <input type="email" id="emailInput" placeholder="Your Email" required>
-            <textarea id="messageInput" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-          </form>
-         
-        </div>
-      </div>
-      <div class="widget youtube-feed">
-        <div class="widget-content">
-          <h3>YouTube Feed</h3>
-          <!-- Add your YouTube feed code here -->
-          <!-- Example: -->
-          <iframe width="300" height="400" src="https://www.youtube.com/embed/?listType=user_uploads&list=OpenAI" frameborder="0" allowfullscreen></iframe>
-        </div>
+  <div class="widget-container">
+    <div class="widget twitter-feed">
+      <div class="widget-content">
+        <h3>Twitter Feed</h3>
+        <!-- Add your Twitter feed code here -->
+        <!-- Example: -->
+        <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/OpenAI?ref_src=twsrc%5Etfw">Tweets by OpenAI</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
-
-    <footer>
-      <p>&copy; 2023 Chemistry Publications. All rights reserved.</p>
-    </footer>
-     <button class="hidden-button" onclick="window.location.href='Responses.html'"></button>
+    <div class="widget contact-widget" style="margin: 0 10px;">
+      <div class="widget-content">
+        <h3>Contact</h3>
+        <form id="contactForm">
+          <input type="text" id="nameInput" placeholder="Your Name" required>
+          <input type="email" id="emailInput" placeholder="Your Email" required>
+          <textarea id="messageInput" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <div id="successMessage" class="success-message" style="display: none;">Cool beans, my dude.</div>
+      </div>
+    </div>
+    <div class="widget youtube-feed">
+      <div class="widget-content">
+        <h3>YouTube Feed</h3>
+        <!-- Add your YouTube feed code here -->
+        <!-- Example: -->
+        <iframe width="300" height="400" src="https://www.youtube.com/embed/?listType=user_uploads&list=OpenAI" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
-  <script>
-    // Function to handle form submission
-    function submitForm(event) {
-      event.preventDefault(); // Prevent form submission
 
-      // Get the form values
-      var name = document.getElementById("nameInput").value;
-      var email = document.getElementById("emailInput").value;
-      var message = document.getElementById("messageInput").value;
+  <footer>
+    <p>&copy; 2023 Chemistry Publications. All rights reserved.</p>
+  </footer>
+  <button class="hidden-button" onclick="window.location.href='Responses.html'"></button>
+</div>
+<script>
+  // Function to handle form submission
+  function submitForm(event) {
+    event.preventDefault(); // Prevent form submission
 
-      // Create an object to store the form data
-      var formData = { name: name, email: email, message: message };
+    // Get the form values
+    var name = document.getElementById("nameInput").value;
+    var email = document.getElementById("emailInput").value;
+    var message = document.getElementById("messageInput").value;
 
-      // Save the form data to localStorage
-      var storedData = localStorage.getItem("formResponses");
-      var formResponses = storedData ? JSON.parse(storedData) : [];
-      formResponses.push(formData);
-      localStorage.setItem("formResponses", JSON.stringify(formResponses));
+    // Create an object to store the form data
+    var formData = { name: name, email: email, message: message };
 
-      // Reset the form
-      document.getElementById("contactForm").reset();
-    }
+    // Save the form data to localStorage
+    var storedData = localStorage.getItem("formResponses");
+    var formResponses = storedData ? JSON.parse(storedData) : [];
+    formResponses.push(formData);
+    localStorage.setItem("formResponses", JSON.stringify(formResponses));
 
-    // Attach the submitForm function to the form's submit event
-    document.getElementById("contactForm").addEventListener("submit", submitForm);
-  </script>
+    // Reset the form
+    document.getElementById("contactForm").reset();
+
+    // Display success message
+    var successMessage = document.getElementById("successMessage");
+    successMessage.style.display = "block";
+    setTimeout(function() {
+      successMessage.style.display = "none";
+    }, 3000);
+  }
+
+  // Attach the submitForm function to the form's submit event
+  document.getElementById("contactForm").addEventListener("submit", submitForm);
+</script>
 </body>
 </html>
