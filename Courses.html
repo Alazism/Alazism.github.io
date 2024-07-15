@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Chemistry Projects</title>
+  <title>Chemistry Coursess</title>
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
@@ -68,7 +68,7 @@
     nav ul li {
       margin-right: 20px;
     }
-    .project {
+    .Courses {
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -86,12 +86,12 @@
 	background-repeat: no-repeat;
 	opacity: 0.5;
     }
-    .project:hover {
+    .Courses:hover {
       transform: scale(1.05);
     }
-    .project h3 {
+    .Courses h3 {
       margin-bottom: 30px;
-      color: #EFEFEF; /* Set project titles to white */
+      color: #EFEFEF; /* Set Courses titles to white */
     }
     .button {
       display: inline-block;
@@ -151,7 +151,7 @@
             var touchStartY = null; // To store the starting Y-coordinate of a touch
             var isAnimating = false; // To store whether an animation is occurring
     
-            $(".project").on("wheel touchstart touchmove", function(event) {
+            $(".Courses").on("wheel touchstart touchmove", function(event) {
                 if(event.type == 'touchstart') {
                     touchStartY = event.originalEvent.touches[0].clientY;
                     return;
@@ -173,9 +173,9 @@
                     $('html, body').stop(); // Stop any running animations
     
                     if (deltaY > 0) {
-                        var next = $(this).next(".project");
+                        var next = $(this).next(".Courses");
     
-                        if(next.length) { // If there's a next project, scroll to it
+                        if(next.length) { // If there's a next Courses, scroll to it
                             $('html, body').animate({
                                 scrollTop: next.offset().top
                             }, scrollTime, function() {
@@ -193,9 +193,9 @@
                             });
                         }
                     } else {
-                        var prev = $(this).prev(".project");
+                        var prev = $(this).prev(".Courses");
     
-                        if(prev.length) { // If there's a previous project, scroll to it
+                        if(prev.length) { // If there's a previous Courses, scroll to it
                             $('html, body').animate({
                                 scrollTop: prev.offset().top
                             }, scrollTime, function() {
@@ -224,36 +224,36 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="PRoject.html">Projects</a></li>
-          <li><a href="Publication.html">Publications</a></li>
+          <li><a href="Courses.html">Coursess</a></li>
+          <li><a href="Educational Videos.html">Educational Videos</a></li>
           <li><a href="Contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <h1>Welcome to Chemistry Projects</h1>
+    <h1>Welcome to Chemistry Coursess</h1>
 
     <section>
-      <div class="project" style="background-image: url('20220909_173317.jpg');">
-        <h3>Project 1</h3>
+      <div class="Courses" style="background-image: url('20220909_173317.jpg');">
+        <h3>Courses 1</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit augue non diam elementum, eu eleifend urna bibendum. Aliquam ullamcorper aliquam purus, at fringilla ligula commodo id. Ut at iaculis sapien, vel tempus ipsum. Phasellus id lorem id lacus vulputate fermentum.</p>
         <a href="#" class="button">Read More</a>
       </div>
 
-      <div class="project" style="background-image: url('20220909_173317.jpg');">
-        <h3>Project 2</h3>
+      <div class="Courses" style="background-image: url('20220909_173317.jpg');">
+        <h3>Courses 2</h3>
         <p>Phasellus pulvinar ultricies lacinia. Sed sagittis, felis id tempus malesuada, lacus nisl vestibulum nisl, a tincidunt tellus libero in nibh. Nullam non bibendum mauris. Integer vitae felis lorem. Nulla vitae tellus nec turpis iaculis pellentesque. Fusce ac aliquam ligula, eu sagittis risus.</p>
         <a href="#" class="button">Read More</a>
       </div>
 
-      <div class="project" style="background-image: url('20220909_173317.jpg');">
-        <h3>Project 3</h3>
+      <div class="Courses" style="background-image: url('20220909_173317.jpg');">
+        <h3>Courses 3</h3>
         <p>Nullam et ipsum a orci placerat scelerisque. Aliquam egestas gravida urna in iaculis. Cras at nisi eget justo viverra scelerisque. Etiam a lacinia mauris. Fusce dignissim pharetra magna ac tincidunt. In cursus ante quis ipsum dapibus dapibus.</p>
         <a href="#" class="button">Read More</a>
       </div>
 
-     <div class="project" style="background-image: url('20220909_173317.jpg');">
-        <h3>Project 4</h3>
+     <div class="Courses" style="background-image: url('20220909_173317.jpg');">
+        <h3>Courses 4</h3>
         <p>Proin sed feugiat nulla, sit amet fermentum orci. Suspendisse congue, odio eu consectetur luctus, neque tellus tempus est, at bibendum sem lorem vitae arcu. In sed risus in enim volutpat volutpat in sed sem. Vivamus volutpat ligula eu quam pretium, eget egestas enim volutpat. Nullam malesuada lorem in rutrum sagittis.</p>
         <a href="#" class="button">Read More</a>
       </div>
@@ -270,7 +270,7 @@
     </div>
 
     <footer>
-      <p>&copy; 2023 Chemistry Projects. All rights reserved.</p>
+      <p>&copy; 2023 Chemistry Coursess. All rights reserved.</p>
     </footer>
   </div>
 </body>
