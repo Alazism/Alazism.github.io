@@ -118,37 +118,46 @@
       footer p {
         margin: 0;
       }
-      .EducationalVideos {
-	text-align: center; /* This ensures all text and buttons are centered */
-  	margin-bottom: 50px;
-      }
+.EducationalVideos {
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Aligns the content vertically */
+  flex-direction: column; /* Stacks the title, paragraph, and button vertically */
+  margin-bottom: 50px;
+}
 
-      .EducationalVideos h3 {
- 	font-size: 24px;
- 	margin-bottom: 10px;
-      }
+.EducationalVideos .video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures content within the wrapper is centered */
+  max-width: 800px;
+}
 
-      .EducationalVideos p {
-  	max-width: 800px; /* Limit width for readability */
- 	margin: 0 auto 20px; /* Center the paragraph block */
-  	text-align: justify;
-      }
+.EducationalVideos h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center; /* Ensure the title is centered */
+}
 
-      .EducationalVideos .button {
-  	display: inline-block; /* Inline-block to avoid stretching */
-  	margin: 20px auto; /* Center the button */
-  	padding: 10px 20px;
- 	background-color: #5A86AD;
-  	color: #fff;
-  	font-size: 18px;
-  	border-radius: 5px;
-  	text-decoration: none;
-  	transition: background-color 0.3s ease;
-       }
+.EducationalVideos p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
 
-      .EducationalVideos .button:hover {
- 	background-color: #F67280;
-       }
+.EducationalVideos .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5A86AD;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.EducationalVideos .button:hover {
+  background-color: #F67280;
+}
 header {
   position: relative;
   padding: 50px 0;
@@ -216,7 +225,7 @@ header ul li {
         <h2>Courses</h2>
         <div class="Courses">
           <div class="Courses-image">
-            <img src="https://via.placeholder.com/400x250.png?text=Courses+Image" alt="Courses Image">
+            <img src="Thermo Free Energy Quan (19.5).png" alt="Courses Image">
           </div>
           <div class="Courses-title">
             <h3>CHEM 112 - Chemical Principles II</h3>
@@ -226,7 +235,7 @@ header ul li {
         </div>
         <div class="Courses">
           <div class="Courses-image">
-            <img src="https://via.placeholder.com/400x250.png?text=Courses+Image" alt="Courses Image">
+            <img src="MO .png" alt="Courses Image">
           </div>
           <div class="Courses-title">
             <h3>CHEM 310 - Introductory Inorganic Chemistry</h3>
@@ -246,7 +255,7 @@ header ul li {
         </div>
         <div class="Courses">
           <div class="Courses-image">
-            <img src="https://via.placeholder.com/400x250.png?text=Courses+Image" alt="Courses Image">
+            <img src="MEiSSNER.png" alt="Courses Image">
           </div>
           <div class="Courses-title">
             <h3>CHEM 411/496W - Inorganic Compounds and Reactions</h3>
