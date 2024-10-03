@@ -45,38 +45,25 @@
       position: sticky;
       top: 0;
       z-index: 1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+    nav {
       display: flex;
       justify-content: center;
     }
-    nav ul li {
-      margin-right: 20px;
+    nav a {
+      margin: 0 15px;
+      display: flex;
+      align-items: center;
+      color: #EFEFEF;
+      font-size: 20px;
     }
     nav img {
       width: 30px;
       height: 30px;
-      margin-right: 10px;
-    }
-    nav a {
-      display: flex;
-      align-items: center;
-      color: #EFEFEF;
-      text-decoration: none;
-      font-size: 18px;
-      margin-right: 20px;
-    }
-    nav a:hover {
-      color: #F67280;
+      margin-right: 8px;
     }
     .publication {
-      height: 100vh;
+      height: auto; /* Adjusted for dynamic content */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -92,6 +79,7 @@
       background-position: center;
       background-repeat: no-repeat;
       opacity: 0.5;
+      margin-bottom: 40px; /* Space between sections */
     }
     .publication:hover {
       transform: scale(1.05);
