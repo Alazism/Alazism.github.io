@@ -119,36 +119,62 @@
         margin: 0;
       }
 .EducationalVideos {
-  text-align: center; /* Center the content */
+  text-align: center; /* Center the section content */
   margin-bottom: 50px;
 }
 
 .EducationalVideos h3 {
-  text-align: center;
-  margin-bottom: 20px; /* Adjust spacing below headers */
+  text-align: center; /* Center the headers */
+  margin-bottom: 10px; /* Adjust spacing below headers */
+  font-size: 24px;
 }
 
 .EducationalVideos p {
+  max-width: 800px; /* Limit the width of the paragraph */
+  margin: 0 auto 20px; /* Center the paragraph block */
   text-align: justify;
-  max-width: 800px;  /* Limit paragraph width for better layout */
-  margin: 0 auto;    /* Center the paragraph block */
 }
 
 .EducationalVideos .button {
-  display: inline-block; /* Ensure buttons don’t take full width */
+  display: inline-block;
   margin: 20px auto; /* Center the button */
+  padding: 10px 20px;
+  background-color: #5A86AD;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
-      }
-      .button:hover {
-        background-color: #B48E92;
-      }
+
+.EducationalVideos .button:hover {
+  background-color: #F67280;
+}
 header {
   position: relative;
-  padding: 50px;
-  text-align: center; /* This already centers the content */
-  display: flex;  /* Use flexbox */
-  justify-content: center;  /* Center horizontally */
-  align-items: center;  /* Center vertically */
+  padding: 50px 0;
+  text-align: center; /* Ensure the header is centered */
+}
+
+header h1 {
+  margin-bottom: 20px; /* Add space between title and navigation */
+  font-size: 48px;
+  z-index: 1;
+}
+
+header nav {
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+}
+
+header ul {
+  list-style: none;
+  padding: 0;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 0 20px; /* Spacing between menu items */
 }
 
   header::before {
@@ -232,17 +258,17 @@ header {
 </div>
 <h2>Educational Videos</h2>
 <div class="Educational Videos">
-  <h3 style="text-align: center;">CHEM 112 Videos</h3>
+  <h3>CHEM 112 Videos</h3>
   <a class="button" href="https://www.youtube.com/watch?v=_WZwq5_7NIY&list=PL9fRTNkskAnDx6bnU7cFMpTn1OofaUbYG&pp=iAQB" target="_blank">CHEM 112 Video Playlist</a>
 </div>
 
 <div class="Educational Videos">
-  <h3 style="text-align: center;">CHEM 310 Videos</h3>
+  <h3>CHEM 310 Videos</h3>
   <a class="button" href="https://youtube.com/playlist?list=PL9fRTNkskAnDT1XN_i3m_r96Mz4bWehjo&si=lj5uYc-X0bhelB0_" target="_blank">CHEM 310 Playlist</a>
 </div>
 
 <div class="Educational Videos">
-  <h3 style="text-align: center;">CHEM 411/496W Videos</h3>
+  <h3>CHEM 411/496W Videos</h3>
   <a class="button" href="https://www.youtube.com/watch?v=aYZtjqeIrS4&list=PL9fRTNkskAnDj8kb-AyTTn9USsVq6SogY&pp=iAQB" target="_blank">CHEM 411/496W Playlist</a>
 </div>
   </main>
