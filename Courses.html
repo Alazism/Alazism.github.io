@@ -2,8 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Chemistry Coursess</title>
+  <title>Chemistry Courses</title>
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -17,19 +18,9 @@
       text-align: center;
       margin-bottom: 50px;
     }
-    h1 {
-      font-size: 48px;
-    }
-    h2 {
-      font-size: 36px;
-    }
-    h3 {
-      font-size: 24px;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      color: #EFEFEF;
-    }
+    h1 { font-size: 48px; }
+    h2 { font-size: 36px; }
+    h3 { font-size: 24px; position: relative; display: inline-block; color: #EFEFEF; }
     h3:before {
       content: '';
       position: absolute;
@@ -39,18 +30,9 @@
       left: 0;
       background-color: #9CAF88;
     }
-    a {
-      color: #5A86AD;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #F67280;
-    }
-    .container {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0;
-    }
+    a { color: #5A86AD; text-decoration: none; }
+    a:hover { color: #F67280; }
+    .container { max-width: 100%; margin: 0 auto; padding: 0; }
     header {
       background-color: #2C2C2C;
       padding: 20px;
@@ -65,9 +47,16 @@
       display: flex;
       justify-content: center;
     }
-    nav ul li {
-      margin-right: 20px;
+    nav ul li { margin-right: 20px; }
+    nav ul li:last-child { margin-right: 0; }
+    nav ul li a {
+      color: #EFEFEF;
+      font-size: 18px;
+      text-decoration: none;
+      padding: 5px 10px;
     }
+    nav ul li a:hover { color: #F67280; }
+
     .Courses {
       height: 100vh;
       display: flex;
@@ -78,145 +67,44 @@
       padding: 50px;
       text-align: center;
       border-radius: 10px;
-      border: 2px solid #E6B8B7; /* Use dusty pink color */
-      box-shadow: 0 0 10px rgba(230, 184, 183, 0.3); /* Box shadow effect */
+      border: 2px solid #E6B8B7;
+      box-shadow: 0 0 10px rgba(230, 184, 183, 0.3);
       transition: transform 0.5s ease;
-	background-size: 95%;
- 	background-position: center;
-	background-repeat: no-repeat;
-	opacity: 0.5;
+      background-size: 95%;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.5;
     }
-    .Courses:hover {
-      transform: scale(1.05);
-    }
-    .Courses h3 {
-      margin-bottom: 30px;
-      color: #EFEFEF; /* Set Courses titles to white */
-    }
+    .Courses:hover { transform: scale(1.05); }
+    .Courses h3 { margin-bottom: 30px; color: #EFEFEF; }
     .button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #9CAF88; /* Use provided color scheme */
+      background-color: #9CAF88;
       color: #fff;
       border-radius: 5px;
       transition: background-color 0.3s ease;
     }
-    .button:hover {
-      background-color: #B48E92;
-    }
-    .widget {
-      margin: 50px auto;
-      width: 400px;
-      background-color: #424242; /* Use darker grey color */
-      color: #EFEFEF;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-	border: 2px solid #5A86AD; /* Add border with dusty blue color */
-  	box-shadow: 0 0 10px rgba(90, 134, 173, 0.5); /* Add box shadow effect */
-    }
-    .widget input[type="text"],
-    .widget input[type="email"],
-    .widget textarea {
-      width: 90%; /* Adjusted width for equal spacing */
-      padding: 10px;
-      margin-bottom: 20px;
-      margin-left: 5px; /* Move entry boxes slightly to the left */
-      border: none;
-      border-radius: 5px;
-    }
-    .widget button {
-      padding: 10px 20px;
-      background-color: #9CAF88; /* Use provided color scheme */
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .widget button:hover {
-      background-color: #B48E92;
-    }
+    .button:hover { background-color: #B48E92; }
+
     footer {
       background-color: #2C2C2C;
       padding: 20px;
       text-align: center;
       color: #EFEFEF;
+      font-size: 16px;
     }
+    footer .social-icons {
+      margin-top: 15px;
+    }
+    footer .social-icons a {
+      color: #EFEFEF;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    footer .social-icons a:hover { color: #F67280; }
   </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var scrollTime = 800; // Change this value to control speed
-            var delayTime = 1000; // Change this value to control delay
-            var touchStartY = null; // To store the starting Y-coordinate of a touch
-            var isAnimating = false; // To store whether an animation is occurring
-    
-            $(".Courses").on("wheel touchstart touchmove", function(event) {
-                if(event.type == 'touchstart') {
-                    touchStartY = event.originalEvent.touches[0].clientY;
-                    return;
-                }
-    
-                var deltaY = 0;
-    
-                if(event.type == 'touchmove') {
-                    deltaY = touchStartY - event.originalEvent.touches[0].clientY;
-                    touchStartY = event.originalEvent.touches[0].clientY;
-                } else if(event.originalEvent.deltaY) {
-                    deltaY = event.originalEvent.deltaY;
-                }
-    
-                if(deltaY !== 0 && !isAnimating) {
-                    isAnimating = true; // Set isAnimating to true
-    
-                    event.preventDefault();
-                    $('html, body').stop(); // Stop any running animations
-    
-                    if (deltaY > 0) {
-                        var next = $(this).next(".Courses");
-    
-                        if(next.length) { // If there's a next Courses, scroll to it
-                            $('html, body').animate({
-                                scrollTop: next.offset().top
-                            }, scrollTime, function() {
-                                setTimeout(function() {
-                                    isAnimating = false; // After delay, set isAnimating back to false
-                                }, delayTime);
-                            });
-                        } else { // If not, scroll to the end of the document
-                            $('html, body').animate({
-                                scrollTop: $(document).height()
-                            }, scrollTime, function() {
-                                setTimeout(function() {
-                                    isAnimating = false; // After delay, set isAnimating back to false
-                                }, delayTime);
-                            });
-                        }
-                    } else {
-                        var prev = $(this).prev(".Courses");
-    
-                        if(prev.length) { // If there's a previous Courses, scroll to it
-                            $('html, body').animate({
-                                scrollTop: prev.offset().top
-                            }, scrollTime, function() {
-                                setTimeout(function() {
-                                    isAnimating = false; // After delay, set isAnimating back to false
-                                }, delayTime);
-                            });
-                        } else { // If not, scroll to the top of the document
-                            $('html, body').animate({
-                                scrollTop: 0
-                            }, scrollTime, function() {
-                                setTimeout(function() {
-                                    isAnimating = false; // After delay, set isAnimating back to false
-                                }, delayTime);
-                            });
-                        }
-                    }
-                }
-            });
-        });
-    </script>
 </head>
 <body>
   <div class="container">
@@ -252,7 +140,7 @@
         <a href="CHEM 311.html" class="button">Read More</a>
       </div>
 
-     <div class="Courses" style="background-image: url('20220909_173317.jpg');">
+      <div class="Courses" style="background-image: url('20220909_173317.jpg');">
         <h3>CHEM 411/496W - Inorganic Compounds and Reactions</h3>
         <p>Click below to see examples of course material made. Materials include examples of Prelabs, Result Summary Examples, and Lecture Slides.</p>
         <a href="CHEM 411.html" class="button">Read More</a>
@@ -261,6 +149,11 @@
 
     <footer>
       <p>&copy; 2024 Chemistry Courses. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="kma6206@psu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:4075923533" title="Phone"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://www.linkedin.com/in/kristen-aviles/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
     </footer>
   </div>
 </body>
