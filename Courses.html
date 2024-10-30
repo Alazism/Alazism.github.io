@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>Chemistry Courses</title>
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -21,24 +20,12 @@
     h1 {
       font-size: 48px;
     }
-    h2 {
-      font-size: 36px;
-    }
     h3 {
       font-size: 24px;
       position: relative;
       display: inline-block;
       text-align: center;
       color: #EFEFEF;
-    }
-    h3:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 10px;
-      bottom: -10px;
-      left: 0;
-      background-color: #9CAF88;
     }
     a {
       color: #5A86AD;
@@ -85,28 +72,9 @@
       border: 2px solid #E6B8B7;
       box-shadow: 0 0 10px rgba(230, 184, 183, 0.3);
       transition: transform 0.5s ease;
-      background-size: 95%;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.5;
     }
     .Courses:hover {
       transform: scale(1.05);
-    }
-    .Courses h3 {
-      margin-bottom: 30px;
-      color: #EFEFEF;
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #9CAF88;
-      color: #fff;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .button:hover {
-      background-color: #B48E92;
     }
     footer {
       background-color: #2C2C2C;
@@ -114,88 +82,13 @@
       text-align: center;
       color: #EFEFEF;
     }
-    footer .social-icons a {
-      margin: 0 10px;
+    .footer-icons a {
       color: #EFEFEF;
-      transition: color 0.3s;
-    }
-    footer .social-icons a:hover {
-      color: #9CAF88;
+      margin: 0 10px;
+      font-size: 24px;
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var scrollTime = 800;
-      var delayTime = 1000;
-      var touchStartY = null;
-      var isAnimating = false;
-
-      $(".Courses").on("wheel touchstart touchmove", function(event) {
-        if(event.type == 'touchstart') {
-          touchStartY = event.originalEvent.touches[0].clientY;
-          return;
-        }
-
-        var deltaY = 0;
-
-        if(event.type == 'touchmove') {
-          deltaY = touchStartY - event.originalEvent.touches[0].clientY;
-          touchStartY = event.originalEvent.touches[0].clientY;
-        } else if(event.originalEvent.deltaY) {
-          deltaY = event.originalEvent.deltaY;
-        }
-
-        if(deltaY !== 0 && !isAnimating) {
-          isAnimating = true;
-          event.preventDefault();
-          $('html, body').stop();
-
-          if (deltaY > 0) {
-            var next = $(this).next(".Courses");
-
-            if(next.length) {
-              $('html, body').animate({
-                scrollTop: next.offset().top
-              }, scrollTime, function() {
-                setTimeout(function() {
-                  isAnimating = false;
-                }, delayTime);
-              });
-            } else {
-              $('html, body').animate({
-                scrollTop: $(document).height()
-              }, scrollTime, function() {
-                setTimeout(function() {
-                  isAnimating = false;
-                }, delayTime);
-              });
-            }
-          } else {
-            var prev = $(this).prev(".Courses");
-
-            if(prev.length) {
-              $('html, body').animate({
-                scrollTop: prev.offset().top
-              }, scrollTime, function() {
-                setTimeout(function() {
-                  isAnimating = false;
-                }, delayTime);
-              });
-            } else {
-              $('html, body').animate({
-                scrollTop: 0
-              }, scrollTime, function() {
-                setTimeout(function() {
-                  isAnimating = false;
-                }, delayTime);
-              });
-            }
-          }
-        }
-      });
-    });
-  </script>
 </head>
 <body>
   <div class="container">
@@ -239,12 +132,12 @@
     </section>
 
     <footer>
-      <div class="social-icons">
-        <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+1234567890"><i class="fas fa-phone"></i></a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
       <p>&copy; 2024 Chemistry Courses. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="mailto:your-email@example.com"><i class="fa fa-envelope"></i></a>
+        <a href="tel:+123456789"><i class="fa fa-phone"></i></a>
+        <a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a>
+      </div>
     </footer>
   </div>
 </body>
