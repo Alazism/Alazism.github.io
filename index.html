@@ -82,11 +82,11 @@
         margin-right: 50px;
       }
       .Courses-image img {
-        width: 350px; /* Set a fixed width */
-        height: 350px; /* Set a fixed height */
-        object-fit: contain; /* Ensures the image fits within the box without distortion */
-        background-color: transparent; /* Removes any potential background */
+        width: 350px; /* Keep fixed width */
+        height: 350px; /* Keep fixed height */
+        object-fit: contain; /* Ensure image fits within the bounds without cropping or distortion */
         border-radius: 10px;
+        background-color: transparent; /* Prevents any background outline */
       }
       .Courses-title {
         flex: 2;
@@ -121,84 +121,84 @@
       footer p {
         margin: 0;
       }
-.EducationalVideos {
-  display: flex;
-  justify-content: center; /* Horizontally centers the content */
-  align-items: center;
-  flex-direction: column; /* Stacks content vertically */
-  margin-bottom: 50px;
-}
+      .EducationalVideos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 50px;
+      }
 
-.EducationalVideos h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center; /* Center the header */
-}
+      .EducationalVideos h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-.EducationalVideos .button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #5A86AD;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
+      .EducationalVideos .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #5A86AD;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
 
-.EducationalVideos .button:hover {
-  background-color: #F67280;
-}
+      .EducationalVideos .button:hover {
+        background-color: #F67280;
+      }
 
-header {
-  position: relative;
-  padding: 50px 0;
-  text-align: center; /* Ensure the header is centered */
-}
+      header {
+        position: relative;
+        padding: 50px 0;
+        text-align: center;
+      }
 
-header h1 {
-  margin-bottom: 20px; /* Add space between title and navigation */
-  font-size: 48px;
-  z-index: 1;
-}
+      header h1 {
+        margin-bottom: 20px;
+        font-size: 48px;
+        z-index: 1;
+      }
 
-header nav {
-  display: flex;
-  justify-content: center; /* Center the navigation links */
-}
+      header nav {
+        display: flex;
+        justify-content: center;
+      }
 
-header ul {
-  list-style: none;
-  padding: 0;
-}
+      header ul {
+        list-style: none;
+        padding: 0;
+      }
 
-header ul li {
-  display: inline-block;
-  margin: 0 20px; /* Spacing between menu items */
-}
+      header ul li {
+        display: inline-block;
+        margin: 0 20px;
+      }
 
-  header::before {
-    content: "";
-    background-image: url('Background.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5; /* Adjust the opacity value as needed */
-    z-index: -1;
-  }
+      header::before {
+        content: "";
+        background-image: url('Background.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        z-index: -1;
+      }
 
-  h1 {
-    position: relative;
-    z-index: 1;
-  }
+      h1 {
+        position: relative;
+        z-index: 1;
+      }
     </style>
   </head>
   <body>
@@ -216,7 +216,7 @@ header ul li {
       </header>
       <main>
         <h2>About Me</h2>
-        <p style="text-align: justify;">The Pennsylvania State University has granted me amazing opportunities to practice and progress my teaching skills. This growth has been supported over the course of three and a half years, five different courses, and hundreds of students. This webpage provides details of my teaching assignments and materials I designed and created for the corresponding courses.</p>
+        <p style="text-align: justify;">The Pennsylvania State University has granted me amazing opportunities to practice and progress my teaching skills...</p>
         <h2>Courses</h2>
         <div class="Courses">
           <div class="Courses-image">
@@ -224,7 +224,7 @@ header ul li {
           </div>
           <div class="Courses-title">
             <h3>CHEM 112 - Chemical Principles II</h3>
-            <p style="text-align: justify;"> My main responsibilities were attending lectures, assisting students during lecture activities, holding office hours, leading Recitations (beginning SP23), making course material (exam questions, review videos, and Recitation worksheets with answer keys), and hosting review sessions before exams. Additionally, I was given the opportunity to lecture on the course while supervised during FA22. During SP23 and FA23, when the instructor was absent, I substituted for them by guest lecturing each section and guiding proctors for the exams.</p>
+            <p style="text-align: justify;">My main responsibilities were attending lectures...</p>
             <a class="button" href="CHEM112.html">Examples of course materials</a>
           </div>
         </div>
@@ -234,7 +234,7 @@ header ul li {
           </div>
           <div class="Courses-title">
             <h3>CHEM 310 - Introductory Inorganic Chemistry</h3>
-            <p style="text-align: justify;">My main responsibilities were attending lectures, assisting students during lecture activities, holding office hours, leading Poster Writing workshops, making course material (practice exams and videos), and hosting review sessions before exams. Similarly, I guest lectured the course when the instructor was absent.</p>
+            <p style="text-align: justify;">My main responsibilities were attending lectures...</p>
             <a class="button" href="CHEM310.html">Examples of course materials</a>
           </div>
         </div>
@@ -244,7 +244,7 @@ header ul li {
           </div>
           <div class="Courses-title">
             <h3>CHEM 311 - Development of CHEM 411/496W (Inorganic Lab)</h3>
-            <p style="text-align: justify;">My main responsibility was creating and designing a new laboratory course. This included meeting with professors to collaborate and incorporate their ideas, selecting experiments, creating materials (prelabs, schedule, writing assignments, answer keys, instructional guides, and material lists), testing experimentation (synthesis and characterization), working with the stockroom to secure the chemicals and materials needed, creating an independent project with professors using Course-Based Undergraduate Research Experiences, and assisting in the organization and development of the Canvas course page.</p>
+            <p style="text-align: justify;">My main responsibility was creating and designing a new laboratory course...</p>
             <a class="button" href="CHEM311.html">Examples of course materials</a>
           </div>
         </div>
@@ -254,36 +254,31 @@ header ul li {
           </div>
           <div class="Courses-title">
             <h3>CHEM 411/496W - Inorganic Compounds and Reactions</h3>
-            <p style="text-align: justify;">My main responsibilities include supervising students through the selected experiments and individual projects, taking detailed observations on student outlook (performance, perception, feeling, and motivation), grading assignments (prelabs and writing assignments), editing assignments based on student feedback, creating rubrics and TA guides for future semesters, modifying Canvas, testing new experiments/synthetic routes, and holding office hours.</p>
+            <p style="text-align: justify;">My main responsibilities include supervising students...</p>
             <a class="button" href="CHEM411.html">Examples of course materials</a>
           </div>
         </div>
-<h2>Educational Videos</h2>
-
-<div class="EducationalVideos">
-  <h3>CHEM 112 Videos</h3>
-  <a class="button" href="https://www.youtube.com/watch?v=_WZwq5_7NIY&list=PL9fRTNkskAnDx6bnU7cFMpTn1OofaUbYG&pp=iAQB" target="_blank">CHEM 112 Video Playlist</a>
-</div>
-
-<div class="EducationalVideos">
-  <h3>CHEM 310 Videos</h3>
-  <a class="button" href="https://youtube.com/playlist?list=PL9fRTNkskAnDT1XN_i3m_r96Mz4bWehjo&si=lj5uYc-X0bhelB0_" target="_blank">CHEM 310 Playlist</a>
-</div>
-
-<div class="EducationalVideos">
-  <h3>CHEM 411/496W Videos</h3>
-  <a class="button" href="https://www.youtube.com/watch?v=aYZtjqeIrS4&list=PL9fRTNkskAnDj8kb-AyTTn9USsVq6SogY&pp=iAQB" target="_blank">CHEM 411/496W Playlist</a>
-</div>
-
-  </main>
-<footer>
-  <p>&copy; 2024 Teaching Portfolio. All rights reserved.</p>
-  <div class="contact-icons">
-    <a href="kma6206@psu.edu" class="icon-link"><i class="fas fa-envelope fa-2x"></i></a>
-    <a href="tel:4075923533" class="icon-link"><i class="fas fa-phone-alt fa-2x"></i></a>
-    <a href="https://www.linkedin.com/in/kristen-aviles/" target="_blank" class="icon-link"><i class="fab fa-linkedin fa-2x"></i></a>
-  </div>
-</footer>
-</div>
-</body>
+        <div class="EducationalVideos">
+          <h3>CHEM 112 Videos</h3>
+          <a class="button" href="https://www.youtube.com/watch?v=_WZwq5_7NIY&list=PL9fRTNkskAnDx6bnU7cFMpTn1OofaUbYG&pp=iAQB" target="_blank">CHEM 112 Video Playlist</a>
+        </div>
+        <div class="EducationalVideos">
+          <h3>CHEM 310 Videos</h3>
+          <a class="button" href="https://youtube.com/playlist?list=PL9fRTNkskAnDT1XN_i3m_r96Mz4bWehjo&si=lj5uYc-X0bhelB0_" target="_blank">CHEM 310 Playlist</a>
+        </div>
+        <div class="EducationalVideos">
+          <h3>CHEM 411/496W Videos</h3>
+          <a class="button" href="https://www.youtube.com/watch?v=aYZtjqeIrS4&list=PL9fRTNkskAnDj8kb-AyTTn9USsVq6SogY&pp=iAQB" target="_blank">CHEM 411/496W Playlist</a>
+        </div>
+      </main>
+      <footer>
+        <p>&copy; 2024 Teaching Portfolio. All rights reserved.</p>
+        <div class="contact-icons">
+          <a href="mailto:kma6206@psu.edu" class="icon-link"><i class="fas fa-envelope fa-2x"></i></a>
+          <a href="tel:4075923533" class="icon-link"><i class="fas fa-phone-alt fa-2x"></i></a>
+          <a href="https://www.linkedin.com/in/kristen-aviles/" target="_blank" class="icon-link"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
