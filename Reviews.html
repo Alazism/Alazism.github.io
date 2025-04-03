@@ -1,8 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Reviews</title>
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -11,7 +14,7 @@
       font-family: 'Open Sans', sans-serif;
       font-size: 18px;
     }
-    h1, h2, h3 {
+    h1, h2 {
       font-family: 'Merriweather', serif;
       text-align: center;
       margin-bottom: 50px;
@@ -22,40 +25,13 @@
     h2 {
       font-size: 36px;
     }
-    h3 {
-      font-size: 24px;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      color: #EFEFEF;
-    }
-    h3:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 10px;
-      bottom: -10px;
-      left: 0;
-      background-color: #9CAF88;
-    }
-    a {
-      color: #5A86AD;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #F67280;
-    }
-    .container {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0;
-    }
+
+    /* Navigation Bar */
     header {
       background-color: #2C2C2C;
       padding: 20px;
       position: sticky;
       top: 0;
-      position: relative;
       z-index: 1;
     }
     nav ul {
@@ -68,140 +44,84 @@
     nav ul li {
       margin-right: 20px;
     }
- .widget-container {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  max-width: 900px;
-  align-items: flex-start;
-  position: relative;
-  z-index: 1;
-}
+    nav ul li a {
+      color: #EFEFEF;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    nav ul li a:hover {
+      background-color: #9CAF88;
+      color: #2C2C2C;
+    }
 
-.widget {
-  background-color: #424242;
-  color: #EFEFEF;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  border: 2px solid #5A86AD;
-  box-shadow: 0 0 10px rgba(90, 134, 173, 0.5);
-  flex: 1;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-}
+    /* Review Widgets */
+    .widget-container {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      max-width: 900px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .widget {
+      background-color: #424242;
+      color: #EFEFEF;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid #5A86AD;
+      box-shadow: 0 0 10px rgba(90, 134, 173, 0.5);
+      flex: 1;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .widget:hover {
+      transform: scale(1.15);
+      z-index: 3;
+    }
 
-.widget:hover {
-  transform: scale(1.15);
-  z-index: 3;
-}
+    /* Scrollable Review Box */
+    .review-box {
+      width: 90%;
+      height: 400px;
+      overflow-y: auto;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: left;
+      background-color: #333;
+      border: 1px solid #5A86AD;
+    }
+    .review-box p {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #EFEFEF;
+    }
+    .review-box hr {
+      border: none;
+      border-top: 1px dotted #5A86AD;
+      margin: 10px 0;
+    }
 
-.widget-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.widget-content h3 {
-  margin-bottom: 20px;
-}
-
-.widget-content form {
-  width: 300px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.widget-content input[type="text"],
-.widget-content input[type="email"],
-.widget-content textarea {
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 20px;
-  margin-left: 5px;
-  border: none;
-  border-radius: 5px;
-}
-
-.widget-content button {
-  padding: 10px 20px;
-  background-color: #9CAF88;
-  color: #2C2C2C;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.widget-content button:hover {
-  background-color: #b48e92;
-}
-
-.twitter-feed,
-.youtube-feed,
-.contact-widget {
-  width: 400px;
-  height: 500px;
-  position: relative;
-  z-index: 2;
-}
-
-.success-message {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #EFEFEF;
-  text-align: center;
-  text-shadow: 1px 1px 1px #5A86AD;
-  animation: neon-glow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neon-glow {
-  from {
-    text-shadow: 1px 1px 1px #5A86AD, 1px 1px 3px #5A86AD, 1px 1px 5px #5A86AD;
-  }
-  to {
-    text-shadow: 1px 1px 5px #5A86AD, 1px 1px 3px #5A86AD, 1px 1px 1px #5A86AD;
-  }
-}
-
-footer {
-  background-color: #2C2C2C;
-  padding: 20px;
-  text-align: center;
-  position: sticky;
-  bottom: 0;
-  margin-top: 50px;
-}
-
-footer p {
-  margin: 0;
-  font-size: 14px;
-  color: #EFEFEF;
-}
-
-.hidden-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: auto;
-  z-index: 9999;
-}
-
-</style>
+    /* Footer */
+        footer {
+            background-color: #2C2C2C;
+            padding: 20px;
+            text-align: center;
+            color: #EFEFEF;
+        }
+        footer a {
+            color: #EFEFEF;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        footer a:hover {
+            color: #9CAF88;
+        }
+  </style>
 </head>
 <body>
 <div class="container">
@@ -217,73 +137,271 @@ footer p {
   </header>
 
   <div class="widget-container">
-    <div class="widget twitter-feed">
+    <div class="widget review-widget">
       <div class="widget-content">
-        <h3>Twitter Feed</h3>
-        <!-- Add your Twitter feed code here -->
-        <!-- Example: -->
-        <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/OpenAI?ref_src=twsrc%5Etfw">Tweets by OpenAI</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <h3>CHEM 112 Reviews</h3>
+        <div class="review-box">
+          <p>"Kristen was very very helpful with explaining key concepts, especially during lectures and recitation. I honestly love Kristen so much because she definitely helped me with this class and she was always available to chat and review exams. The Kahoot for exams was fun and overall I had a great time learning with the help of Kristen. She is going to be a great professor."</p>
+          <hr>
+          <p>"Kristen was absolutely incredible! When I have any difficulties with any of the topics, Kristen is always willing to help myself and those around me. She is thorough with the material and is always willing to answer any questions. She creates such a friendly environment. During the days in which she was teaching the class, I understood much more of the material than usual. She will make such an incredible teacher!!"</p>
+          <hr>
+          <p>"Kristen is good at engaging the class, and she is a genuinely inviting teacher when it comes to reading the class and assessing our needs. When doing reviews before exams, she takes feedback well and hones in on the topics that we are most uncertain about. Wonderful instructor."</p>
+          <hr>
+          <p>"I love how enthusiastic Kristen is about chem and she really breaks down all the concepts and explains in depth on how to get the the answer and why the answer makes sense to help learn the concept and not just memorize how to do it. She honestly has saved my chem grade and is one of the main reasons I did better than I expected. If she ever has the opportunity she should definitely teach a chem course because she explains things so well and is extremely helpful."</p>
+          <hr>
+          <p>"Having the help of Kristen during lectures was extremely helpful in my understanding of this course. She explains concepts and problems extremely well and is also very encouraging."</p>
+          <hr>
+          <p>"Kristen was engaging and attentive in all of our interactions. She is excited about chemistry and a patient teacher to those who are discovering it. Fantastic."</p>
+          <hr>
+          <p>"Kristen was the absolute best."</p>
+          <hr>
+          <p>"Your energy and enthusiasm for chemistry made it very interesting when you taught. You explained things very clear and it made topics seem way easier."</p>
+          <hr>
+          <p>"Kristen is a fantastic teacher and has made recitation a valuable resource for me in this class. I wait for recitation every week to understand what kind of problems I need to be able to solve."</p>
+          <hr>
+          <p>"She explained everything well."</p>
+          <hr>
+          <p>"Really good energy and walks through all problems."</p>
+          <hr>
+          <p>"Kristen was able to really help me understand concepts during recitation. I feel like those sessions really helped my learning and filled in gaps that I did not understand from lectures."</p>
+          <hr>
+          <p>"Kristen did a great job throughout the semester in recitation. Her teaching really helped me learn and own the material."</p>
+          <hr>
+          <p>"Very clear and helpful and really wanted the students to help learn the course."</p>
+          <hr>
+          <p>"I thought Kristan was very helpful during lectures when I had questions and during office hours. She was always in a good mood and able to explain topics in a way I could understand them easily."</p>
+          <hr>
+          <p>"Kristen was very helpful and explained topics very well."</p>
+          <hr>
+          <p>"Kristen has been amazing all semester, true love for teaching."</p>
+          <hr>
+          <p>"She was very enthusiastic and made it easy to pay attention and learn."</p>
+          <hr>
+          <p>"Kristen made Chem 112 so much more enjoyable for me. She really helped me learn the material and was great at giving explanations for problems that were hard."</p>
+          <hr>
+          <p>"Slay I love Kristen. She teaches and explains thing in such a exciting way that you can tell that she loves chemistry."</p>
+          <hr>
+          <p>"She explained tricky concepts really well."</p>
+          <hr>
+          <p>"Kristen substituted for my recitation once and taught me more in that one class then I learned in all of my other recitation classes this semester combined - she took her time reviewing material, permitting sufficient time to take notes and try out practice problems - really appreciate how much time she spent giving step by step explanations - really liked her energy and was extremely encouraging"</p>
+          <hr>
+          <p>"Kristen is destine to become a professor, she is concise with what she says and very fun and helpful. Always looked forward to when she would sub-in for Dr. Lori."</p>
+          <hr>
+          <p>"She thoroughly went into detail why we solved a problem in that particular way and helped me a lot."</p>
+          <hr>
+          <p>"Kristen was very upbeat and energetic and contributed to an overall positive environment.. She was helpful and always willing to explain further."</p>
+          <hr>
+          <p>"Kristen is amazing, I went to her review sessions and recitations because she makes the material so much easier to understand by using pneumonics and other ways of remembering formulas and content. She's really approachable and I really enjoyed working with her on class problems."</p>
+          <hr>
+          <p>"Kristen's attitude made the class much more enjoyable."</p>
+          <hr>
+          <p>"I appreciated Kristen's lecturing and found her enjoyable to learn from. I felt that she answered questions and explained in a better way."</p>
+          <hr>
+          <p>"The recitation wtih Kristen had practically rhe same level of importance to me as the actual course. The lessons on what we would be learnong that week always gave me a solid understanding that boosted me forward in class. The worksheet was always helpful and the reviews beore exams gave me a solid idea of what I was still unsure of right before the exam."</p>
+          <hr>
+          <p>"Kristen made long recitation packets engaging with her positive attitude and strong love for chemistry. Her teaching style allowed for a relaxed classroom that I felt safe asking questions in. She explained complex topics in a straightforward manner without omitting any details and was eager to help students succeed."</p>
+          <hr>
+          <p>"Kristen focused on providing a very stress free environment for us. I liked that in recitations we went over the worksheets in detail, and she was always very upbeat and cared for our well being. She helped us study for our exams and also reiterate important topics for us to focus on."</p>
+          <hr>
+          <p>"Kristen is a fantastic teacher and has made recitation a valuable resource for me in this class. I wait for recitation every week to understand what kind of problems I need to be able to solve."</p> 
+          <hr>
+          <p>"Kristen is amazing at teaching concepts and allowing space for questions. She works through the problems in a way that is easy to follow and understand, and I have gained many insights and helpful tips from her during recitation. I would love to see her teach chem 112 herself, as I feel she has a passion for teaching the material, and has a knack of keeping it entertaining."</p>
+          <hr>
+          <p>"I feel like recitation helped me fully understand the material. I would have struggled more without it. Kristen as leader really made the material easy to understand, and she was able to break it down. She answered questions and was very knowledgeable."</p>
+          <hr>
+          <p>"Kristen was very very helpful with explaining key concepts, especially during lectures and recitation. I honestly love Kristen so much because she definitely helped me with this class and she was always available to chat and review exams. The Kahoot for exams was fun and overall I had a great time learning with the help of Kristen. She is going to be a great professor."</p>
+          <hr>
+          <p>"Kristen did an amazing job in the LA discussion sessions and always helped me to improve my understanding of the course material."</p>
+          <hr>
+          <p>"She made the experience of learning chemistry fun, and tried to relieve stress of the concepts."</p>
+          <hr>
+          <p>"Kristen was very engaging and I enjoyed when she taught the lectures."</p>
+          <hr>
+          <p>"She was very engaging and easy to work with."</p>
+          <hr>
+          <p>"Kristen was always super helpful in class and explained things in a way that made sense to me. I enjoyed being in her section as she is approachable, intelligent, and friendly. I wouldn't have asked as many questions as I did without her."</p>
+          <hr>
+          <p>"She was very helpful whenever I had questions with top hat questions."</p>
+          <hr>
+          <p>"Kristen was an amazing TA. She always was very enthusiastic and helpful and would make sure to go out of her way to help people, especially if they are shy. She is seriously one of the only reasons I go to class because she made me feel supported."</p>
+          <hr>
+          <p>"Super optimistic! Kristen has an amazing personality for teaching and explaining."</p>
+          <hr>
+          <p>"I enjoyed when Kristen would teach the class because she is energetic and makes it easy to understand the material."</p>
+          <hr>
+          <p>"She was amazing and helpful- another reason for helping me with this class. I loved when she taught she was so enthusiastic."</p>
+          <hr>
+          <p>"I noticed that as Kristen taught more and more lectures, the better and more comfortable she got with them. Everything was always well explained and I like that she still interacted with her section during activies and poll questions."</p>
+          <hr>
+          <p>"I just want to say that Kristen's enthusiasm really helped me focus and learn during lectures and LA discussions."</p>
+          <hr>
+          <p>"The enthusiasm she had when teaching the material helped me to focus and understand the content better. She made sure to provide enough time to copy the material on the board which is extremely helpful in times when the slides were full of important information. She also was able to review all the slides in class, so it was explained to everyone before we left instead of having to learn the material afterward."</p>
+          <hr>
+          <p>"I loved how enthusiastic Kristen was. I had Kristen as one of my LA discussion time leaders, and Kristen provided a positive learning environment."</p>
+          <hr>
+          <p>"I attended her LA sessions and she was always very helpful in clearing up how the difficult calculations were made while also being very accepting to students that were confused."</p>
+          <hr>
+          <p>"I think Kristen does a fantastic job of being a TA"</p>
+          <hr>
+          <p>"I would ask that they let Kristen teach more because she's truly an amazing instructor"</p>
+          <hr>
+          <p>"I had Kristen for my LA sessions and she did a great job of explaining the topics and questions that we didn't learn in class."</p>
+          <hr>
+          <p>"Kristen is an amazing TA. Going to her LA discussions every week was critical for understanding the material. She did a great job filling in the gaps that the lecture often left."</p>  
+        </div>
       </div>
     </div>
-    <div class="widget contact-widget" style="margin: 0 10px;">
+
+    <div class="widget review-widget" style="margin: 0 10px;">
       <div class="widget-content">
-        <h3>Contact</h3>
-        <form id="contactForm">
-          <input type="text" id="nameInput" placeholder="Your Name" required>
-          <input type="email" id="emailInput" placeholder="Your Email" required>
-          <textarea id="messageInput" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <div id="successMessage" class="success-message" style="display: none;">Cool beans, my dude.</div>
+        <h3>CHEM 310 Reviews</h3>
+        <div class="review-box">
+          <p>"She was really passionate about teaching and being there for all of us, and we all really appreciated the effort she put in and how much time she took out of her days for us. She also really knew what she was talking about so it made her explanations really thorough and she could explain things in more than one way if you didn’t get it the first time."</p>
+          <hr>
+          <p>"Kristen is such an amazing TA. Her kind and bubbly personality made her approachable and she always explained everything so well. My understanding of course topics was greatly improved because of her."</p>
+          <hr>
+          <p>"Office hours were always helpful and increased my understanding. Kristen could reframe a topic if I wasn't understanding it the first way she explained it and that was really helpful."</p>
+          <hr>
+          <p>"She made sure that every class she walked over to me and sat next to me to make sure I was understanding the material. It was so helpful and really got me to grasp the information that was being taught to us."</p>
+          <hr>
+          <p>"Really supportive and took the time to individually break down any misconceptions about any concepts so that I could better understand it."</p>
+          <hr>
+          <p>"Kristen was a queen. She is so knowledgeable and passionate about inorganic chemistry. She helped me out a lot in class and was also very easy to talk to."</p>
+          <hr>
+          <p>"Kristen was the best teacher and wanted us to understand the material and was so passionate about chemistry. SHe was the best teacher and I am so glad she was my TA for this class."</p>
+          <hr>
+          <p>"Kristen was super helpful and always knew how to answer my questions without giving me the answer. I also really found it helpful how she would lead me towards an answer but in the end I put all the pieces together to answer questions. I also found Kristen's enthusiasm for this class to be extremely beneficial, as she made me more excited about inorganic chemistry."</p>
+          <hr>
+          <p>"Enthusiastic, knowledgeable, approachable. Every quality you want in an educator, Kristen has."</p>
+          <hr>
+          <p>"She was very helpful and helped make large concepts easier."</p>
+          <hr>
+          <p>"Kristen was an amazing teaching assistant, and I learned more from her than my professor. She is talented at teaching and truly cares about her student's wellbeing. She would try to help us understand confusing topics and give us resources to prepare for the exams. I was so lucky to have her as my TA."</p>
+          <hr>
+          <p>"Kristen was very helpful and assisted me with all my questions."</p>
+          <hr>
+          <p>"I think Kristen is the best TA Dr. Stepan has! Extremely kind and knowledgeable. She showed such a high level of care and attention to student's needs during lecture and her office hours. Kristen helped me a lot personally because I am not very good a Chemistry and I am very thankful for that!"</p>
+          <hr>
+          <p>"She was a very good TA. Even though I didn't interact with her a lot (given that she was not my recitation leader) when she taught the class while the professor was absent she was very good. I wish she taught for us all the time!"</p>
+          <hr>
+          <p>"Kristen is a wonderful TA who explains chemistry very well."</p>
+          <hr>
+          <p>"Kristen always gives thought out answers to any questions I have."</p>
+          <hr>
+          <p>"I really liked how Kristen was always open to changing her teaching style to make it easier for us. She was helpful and welcoming and always made sure we were comfortable with how the recitation was being ran, which I really appreciated."</p>
+          <hr>
+          <p>"Kristen was an amazing TA and even teacher when Dr. Lori was out. I preferred Kristen over the sub we previously had because she made everything clear and explained the concepts well. She’s outgoing, energetic, and always willing to help. Great TA!!"</p>
+          <hr>
+          <p>"I think Kristen did a great job fostering a positive learning environment."</p>
+          <hr>
+          <p>"Kristen was an absolutely amazing TA and out of everyone, I definitely learned the most from her. She was able to break down the confusing topics in recitation and was very helpful (even when the recitation worksheets were unnecessarily confusing). I appreciated her exam reviews on the days we had exams and I think that I was able to do so well on the exams because of her. While structure of the class was poor and only served to stress students out with the large number of poll questions on concepts we didn't know and some exam questions that just felt like they were meant to trick us, Kristen was a big positive of the class for me and made me not dislike the class as much."</p>
+          <hr>
+          <p>"When she lectured, I liked how she explained every concept and lecture activity in depth to ensure we completely understood, and also she is very kind and patient when helping students in class."</p>
+          <hr>
+          <p>"I would just like to say that whatever Kristen is being paid, it is not enough. The only reason I felt like I could possibly learn something in Chem 112 was because I was lucky enough to get Kristen as my recitation leader."</p>
+          <hr>
+          <p>"My learning experience was positive. I had a lot of worries going into it but Kristen immensely helped with that. I felt like both the tools and support needed to succeed. When I did need help she was there."</p>
+          <hr>
+          <p>"She was a great instructor. Kristen was always willing to help even if she saw you were just struggling but didn't ask for help."</p>
+          <hr>
+          <p>"I have never had a TA like Kristen! Though I did not have her for recitation, she has constantly helped me during lecture and office hours to really help me understand the content. She went above and beyond to make the class review sheets for exams and make sure we did well. She was also encouraging and a positive light everyday."</p>
+          <hr>
+          <p>"Kristen was super helpful in class and never made me feel dumb for not knowing stuff. She was also very good at breaking stuff down and making it more understandable. She was also always very calm which was nice for a class early in the morning."</p>
+          <hr>
+          <p>"Kristen was always so welcoming with everyone in the class and was always eager to help others learn."</p>
+          <hr>
+          <p>"Kristen would continuously encourage engagement in our recitation and check our understanding. She would be willing to answer any questions we had and verify that we understood her explanations."</p>
+          <hr>
+          <p>"She was willing to spend the time and effort to teach the material in a way that students can actually understand it."</p>
+          <hr>
+          <p>"Kristen Aviles was another fantastic TA. She explained things so clearly and in a fun way. She was always so positive and never made you feel bad for asking a question."</p>
+          <hr>
+          <p>"She would never make a student feel as if they'd asked a stupid question, she was understanding and very helpful."</p>
+          <hr>
+          <p>"Kristen is very helpful and understanding. She listens really well and has empathy for students' struggles. She is also really good at explaining concepts."</p>
+          <hr>
+          <p>"Kristen was often encouraging us to take care of ourselves and it was always a needed reminder. She had the best recitation because she explained things thoroughly but in a comprehensible way. The review sheets she made taught me how to make my own and is something I have used in other classes as well."</p>
+          <hr>
+          <p>"BEST TA/INSTRUCTOR EVER I learned more from Kristen when she taught lecture I actually understood what was happening"</p>
+          <hr>
+          <p>"She was very kind and patient."</p>
+          <hr>
+          <p>"She is very lighthearted and did her best to break down concepts so we can understand."</p>
+          <hr>
+          <p>"Kristen was always such a kind presence in both lecture, recitation, and office hours and it was clear she actually wanted us to learn and understand the material. She is clearly very passionate and knowledgeable about this subject and and I really enjoyed when she taught out lecture those few days."</p>
+          <hr>
+          <p>"Kristen is one of the best TAs I have gotten to learn from for any course. She is the most kind-hearted, patient, and knowledgeable people that I have ever had the privilege of learning from. When she took over teaching lecture, she did a great job and somehow made me less stressed out about the class. During office hours, she explains all concepts throughly and does so in a way that connects all content that I had been previously having trouble with."</p>
+          <hr>
+          <p>"I always understood Kristen's explanations and she was always willing to help."</p>
+          <hr>
+          <p>"Kristen was always very nice while explaining answers to questions. Her LA Minutes were helpful reminders on how to study and to take breaks."</p>
+          <hr>
+          <p>"She positively interacted with and helped anyone who needed it. Very helpful in explaining things during review sessions and lectures that she had taught."</p>
+          <hr>
+          <p>"Kristen is oddly enthusiastic about chemistry in a way that is uncommon to me. But this makes it so much more engaging, and she really wants her students to succeed."</p>
+          <hr>
+          <p>"She was very welcoming and nice when she taught. Very encouraging to students."</p>
+          <hr>
+          <p>"Kristen was very encouraging and helped guide you to the correct answer without giving it to you, which aided in my learning experience. She was always positive and smiling, which was nice to see in class."</p>
+          <hr>
+          <p>"Kristen is incredibly sweet and well-spoken. She'd make an excellent instructor herself and the periods where she took over for Dr. Lori were a fun shake up of expectations."</p>
+          <hr>
+          <p>"I learned from Kristen if you love what you are teaching/learning you will grasp it better and teach it better to others."</p>
+          <hr>
+          <p>"Kristen went above and beyond as a TA, she truly changed my experience in this class."</p>
+          <hr>
+          <p>"I had friends attend her recitation not even for credit because she was the TA who explained it best. She was considerate and had thoughtful explanations. Plus the stickers made me happy."</p>
+          <hr>
+          <p>"She was always helpful and helped make large concepts make sense."</p>
+          <hr>
+          <p>"I've never met another TA who was better at teaching and breaking down big ideas the way Kristen did."</p>
+          <hr>
+          <p>"Kristen was very receptive the the way the students best learned. very flexible with her lessons."</p>
+          <hr>
+          <p>"Kristen was an unbelievable teacher! She helped me understand concepts in recitation that sometimes were more difficult for me to understand in lecture. She was super nice and respectful to all of us and made Chem much more enjoyable!"</p>
+          <hr>
+          <p>"It was a supportive and helpful environment that allowed be to get help if I put effort in."</p>
+          <hr>
+          <p>"Kristen was always energetic and tried to bring up the mood and confidence even on exam days."</p>
+          <hr>
+          <p>"Very helpful during recitation. Great at explaining the content."</p>
+          <hr>
+          <p>"Kristen is very helpful and understanding. She listens really well and has empathy for students' struggles. She is also really good at explaining concepts."</p>
+          <hr>
+          <p>"10/10 professor. Kristen helped me understand concepts in a way that made sense to everyone, which most times is not the case."</p>
+          <hr>
+          <p>"She always made everyone feel welcome."</p>
+          <hr>
+          <p>"Kristen is a wonderful professor!"</p>
+          <hr>
+          <p>"During tophat questions, Kristen always came around to answer any questions and help solve the problem. She was very patient and explained things thoroughly until I understood. Her review sessions were also very helpful and she went into a lot of detail explaining everything."</p>
+        </div>
       </div>
     </div>
-    <div class="widget youtube-feed">
+
+    <div class="widget review-widget">
       <div class="widget-content">
-        <h3>YouTube Feed</h3>
-        <!-- Add your YouTube feed code here -->
-        <!-- Example: -->
-        <iframe width="300" height="400" src="https://www.youtube.com/embed/?listType=user_uploads&list=OpenAI" frameborder="0" allowfullscreen></iframe>
+        <h3>CHEM 411W/496W Reviews</h3>
+        <div class="review-box">
+          <p>"Kristen was always willing to put in extra time and effort to help us with our assignments and ensure in-depth feedback on our writing. The weekend zoom hours, while I never made it, were very comforting to know that if I had an issue there was a time set aside. I also appreciated the amount of flexibility with due dates as it helped me feel understood especially when I have a lot of other classes and work to complete. The stickers and smiley faces on assignments are EXTREMELY important, they were always a highlight to get more stickers, and the smiley faces helped me feel like even if the grade was a little lower than I hoped, that she could tell I had put forth effort."</p>
+          <hr>
+          <p>"The instructor rewarded our hard work and provided positive, constructive criticism. I never stopped learning the entire semester, and regardless of how challenging things were, I was never daunted by the tasks at hand. I felt right at home the whole semester. Give this instructor a huge raise; they absolutely deserve it."</p>
+          <hr>
+          <p>"Kristen is kind and is always available to ask questions, which has allowed me to feel more comfortable with my writing in this course. As a result, I feel that I have developed a better understanding of the material and can apply it to my reports. The feedback I receive on my drafts is thorough and I feel that has helped the most with my improvements."</p>
+          <hr>
+          <p>"Kristen is well prepared during each class and always checks with each individual to ensure that they understand what is going on each lab. If a student is struggling with a concept, she will not hesitate to further explain and give examples. There had been a situation where the class had not understood a technique due to not taking any courses that went in-depth with it, so she provided supplementary information on the course page. It was helpful when reviewing data and allowed me to get a better understanding of how to write about it. I feel that my success in this course is mostly due to her ability to help students and provide excellent guidelines in the course."</p>
+          <p>"Thanks to this instructor, my scientific writing skills have improved tenfold, and I have gained new confidence in my writing. Additionally, this course has provided me with the skills necessary to create plans and work through problems in chemistry from a technical standpoint, and at this point in the semester, do it all comfortably. The versatility of my skills in the lab has expanded more than I could imagine in such a short time."</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2023 Chemistry Publications. All rights reserved.</p>
-  </footer>
-  <button class="hidden-button" onclick="window.location.href='Responses.html'"></button>
+<!-- Footer -->
+    <footer>
+        <a href="mailto:kma6206@psu.edu"><i class="fas fa-envelope"></i></a>
+        <a href="tel:405923533"><i class="fas fa-phone"></i></a>
+        <a href="https://www.linkedin.com/in/kristen-aviles/"><i class="fab fa-linkedin"></i></a>
+    </footer>
 </div>
-<script>
-  // Function to handle form submission
-  function submitForm(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get the form values
-    var name = document.getElementById("nameInput").value;
-    var email = document.getElementById("emailInput").value;
-    var message = document.getElementById("messageInput").value;
-
-    // Create an object to store the form data
-    var formData = { name: name, email: email, message: message };
-
-    // Save the form data to localStorage
-    var storedData = localStorage.getItem("formResponses");
-    var formResponses = storedData ? JSON.parse(storedData) : [];
-    formResponses.push(formData);
-    localStorage.setItem("formResponses", JSON.stringify(formResponses));
-
-    // Reset the form
-    document.getElementById("contactForm").reset();
-
-    // Display success message
-    var successMessage = document.getElementById("successMessage");
-    successMessage.style.display = "block";
-    setTimeout(function() {
-      successMessage.style.display = "none";
-    }, 3000);
-  }
-
-  // Attach the submitForm function to the form's submit event
-  document.getElementById("contactForm").addEventListener("submit", submitForm);
-</script>
 </body>
 </html>
